@@ -1,8 +1,7 @@
 # Install Apache webserver in RedHat/Aamzon Linux VM
 ---
 
-- hosts: 127.0.0.1
-  connection: local
+- hosts: all
   become: yes
   tasks:
     - name: Install httpd

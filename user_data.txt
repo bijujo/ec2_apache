@@ -1,0 +1,7 @@
+#!/bin/bash
+/usr/bin/echo "User data test" > /root/user_data_test
+/usr/bin/amazon-linux-extras install -y ansible2
+/usr/bin/yum install -y git
+/usr/bin/git clone https://github.com/bijujo/ec2_apache.git /tmp/ec2_apache
+cd /tmp/ec2_apache
+/usr/bin/ansible-playbook ec2_apache.yaml
