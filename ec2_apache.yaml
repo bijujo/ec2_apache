@@ -1,0 +1,13 @@
+# Install Apache webserver in RedHat/Aamzon Linux VM
+---
+
+- hosts: all
+  become: yes
+  tasks:
+    - name: Install httpd
+      yum: name=httpd state=present
+      when: ansible_os_family == "RedHat"
+
+    - name: Enable HTTPD service
+      service: name=httpd enabled=yes state=started
+      when: ansible_os_family == "RedHat"
